@@ -2,18 +2,18 @@ from menu import Menu
 from coffee_maker import CoffeeMaker
 from cash_register import CashRegister
 
-
-money_machine = CashRegister()
-coffee_maker = CoffeeMaker()
 menu = Menu()
+coffee_maker = CoffeeMaker()
+money_machine = CashRegister()
 
-is_on = True
 
-while is_on:
+on = True
+
+while on:
     options = menu.get_items()
     choice = input(f"What coffee interests you? ({options}): ")
     if choice == "off":
-        is_on = False
+        on = False
     elif choice.isdigit():
         print("Sorry, that is not an option.")
     elif choice == "report":
